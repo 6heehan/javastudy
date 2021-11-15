@@ -131,32 +131,170 @@ public class assignment3 {
         int countX = 0;
         int countY = 0;
         int countZ = 0;
+        int countChar = 0;
+        int speechLen = speech.length();
 
-
-        for(int i=0;i<speech.length();i++) {
+        for(int i=0;i<speechLen;i++) {
             char one = speech.charAt(i);
             switch(one) {
                 case 'A':
                 case 'a':
                     countA++;
+                    countChar++;
                     break;
                 case 'B':
                 case 'b':
                     countB++;
+                    countChar++;
                     break;
                 case 'C':
                 case 'c':
                     countC++;
+                    countChar++;
                     break;
                 case 'D':
                 case 'd':
                     countD++;
+                    countChar++;
                     break;
                 case 'E':
                 case 'e':
                     countE++;
+                    countChar++;
                     break;
+                case 'F':
+                case 'f':
+                    countF++;
+                    countChar++;
+                    break;
+                case 'G':
+                case 'g':
+                    countG++;
+                    countChar++;
+                    break;
+                case 'H':
+                case 'h':
+                    countH++;
+                    countChar++;
+                    break;
+                case 'I':
+                case 'i':
+                    countI++;
+                    countChar++;
+                    break;
+                case 'J':
+                case 'j':
+                    countJ++;
+                    countChar++;
+                    break;
+                case 'K':
+                case 'k':
+                    countK++;
+                    countChar++;
+                    break;
+                case 'L':
+                case 'l':
+                    countL++;
+                    countChar++;
+                    break;
+                case 'M':
+                case 'm':
+                    countM++;
+                    countChar++;
+                    break;
+                case 'N':
+                case 'n':
+                    countN++;
+                    countChar++;
+                    break;
+                case 'O':
+                case 'o':
+                    countO++;
+                    countChar++;
+                    break;
+                case 'P':
+                case 'p':
+                    countP++;
+                    countChar++;
+                    break;
+                case 'Q':
+                case 'q':
+                    countQ++;
+                    countChar++;
+                    break;
+                case 'R':
+                case 'r':
+                    countR++;
+                    countChar++;
+                    break;
+                case 'S':
+                case 's':
+                    countS++;
+                    countChar++;
+                    break;
+                case 'T':
+                case 't':
+                    countT++;
+                    countChar++;
+                    break;
+                case 'U':
+                case 'u':
+                    countU++;
+                    countChar++;
+                    break;
+                case 'V':
+                case 'v':
+                    countV++;
+                    countChar++;
+                    break;
+                case 'W':
+                case 'w':
+                    countW++;
+                    countChar++;
+                    break;
+                case 'X':
+                case 'x':
+                    countX++;
+                    countChar++;
+                    break;
+                case 'Y':
+                case 'y':
+                    countY++;
+                    countChar++;
+                    break;
+                case 'Z':
+                case 'z':
+                    countZ++;
+                    countChar++;
+                    break;    
             }
         }
+
+        System.out.printf("A: %3d개, %5.2f%%%n", countA , (countA / (double)countChar) * 100);
+        System.out.printf("B: %3d개, %5.2f%%%n", countB , (countB / (double)countChar) * 100);
+        System.out.printf("C: %3d개, %5.2f%%%n", countC , (countC / (double)countChar) * 100);
+        System.out.printf("D: %3d개, %5.2f%%%n", countD , (countD / (double)countChar) * 100);
+        System.out.printf("E: %3d개, %5.2f%%%n", countE , (countE / (double)countChar) * 100);
+        System.out.printf("F: %3d개, %5.2f%%%n", countF , (countF / (double)countChar) * 100);
+        System.out.printf("G: %3d개, %5.2f%%%n", countG , (countG / (double)countChar) * 100);
+        System.out.printf("H: %3d개, %5.2f%%%n", countH , (countH / (double)countChar) * 100);
+        System.out.printf("I: %3d개, %5.2f%%%n", countI , (countI / (double)countChar) * 100);
+        System.out.printf("J: %3d개, %5.2f%%%n", countJ , (countJ / (double)countChar) * 100);
+        System.out.printf("K: %3d개, %5.2f%%%n", countK , (countK / (double)countChar) * 100);
+        System.out.printf("L: %3d개, %5.2f%%%n", countL , (countL / (double)countChar) * 100);
+        System.out.printf("M: %3d개, %5.2f%%%n", countM , (countM / (double)countChar) * 100);
+        System.out.printf("N: %3d개, %5.2f%%%n", countN , (countN / (double)countChar) * 100);
+        System.out.printf("O: %3d개, %5.2f%%%n", countO , (countO / (double)countChar) * 100);
+        System.out.printf("P: %3d개, %5.2f%%%n", countP , (countP / (double)countChar) * 100);
+        System.out.printf("Q: %3d개, %5.2f%%%n", countQ , (countQ / (double)countChar) * 100);
+        System.out.printf("R: %3d개, %5.2f%%%n", countR , (countR / (double)countChar) * 100);
+        System.out.printf("S: %3d개, %5.2f%%%n", countS , (countS / (double)countChar) * 100);
+        System.out.printf("T: %3d개, %5.2f%%%n", countT , (countT / (double)countChar) * 100);
+        System.out.printf("U: %3d개, %5.2f%%%n", countU , (countU / (double)countChar) * 100);
+        System.out.printf("V: %3d개, %5.2f%%%n", countV , (countV / (double)countChar) * 100);
+        System.out.printf("W: %3d개, %5.2f%%%n", countW , (countW / (double)countChar) * 100);
+        System.out.printf("X: %3d개, %5.2f%%%n", countX , (countX / (double)countChar) * 100);
+        System.out.printf("Y: %3d개, %5.2f%%%n", countY , (countY / (double)countChar) * 100);
+        System.out.printf("Z: %3d개, %5.2f%%%n", countZ , (countZ / (double)countChar) * 100);
     }
 }
