@@ -1,6 +1,6 @@
-package javastudy.assignment.week1;
+package assignment.week1;
 
-public class assignment3 {
+public class Assignment3 {
     public static void main(String[] args) {
         String speech = "";
         speech += "My fellow Koreans, I am grateful to you all. "; 
@@ -296,5 +296,7 @@ public class assignment3 {
         System.out.printf("X: %3d개, %5.2f%%%n", countX , (countX / (double)countChar) * 100);
         System.out.printf("Y: %3d개, %5.2f%%%n", countY , (countY / (double)countChar) * 100);
         System.out.printf("Z: %3d개, %5.2f%%%n", countZ , (countZ / (double)countChar) * 100);
+
+        System.out.println(speech.toLowerCase());
     }
 }

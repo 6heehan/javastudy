@@ -1,8 +1,8 @@
-package javastudy.assignment.week1;
+package assignment.week1;
 
 import java.util.Scanner;
 
-public class assignment2 {
+public class Assignment2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         

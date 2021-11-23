@@ -1,6 +1,6 @@
-package javastudy.assignment.week1;
+package assignment.week1;
 
-public class assginment1 {
+public class Assginment1 {
     public static void main(String[] args) {
         char name1 = '한';
         char name2 = '준';
