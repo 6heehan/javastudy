@@ -23,8 +23,10 @@ public class Assignment1 {
             writer.write("<body>\n");
             writer.write("<h1>자바 환경정보</h1>\n");
             writer.write("<table>\n");
+            writer.write("<tr>\n");
             writer.write("<th>키</th>\n");
             writer.write("<th>값</th>\n");
+            writer.write("</tr>\n");
             for ( Object k : System.getProperties().keySet()) {
                 String key = k.toString();
                 String value = System.getProperty(key);

@@ -56,5 +56,6 @@ public class Assignment1 {
         System.out.println("(" + coordinate[minDistanceIndex][0] + "," +coordinate[minDistanceIndex][1] + ") => " + minDistance);
         System.out.println("같은 거리가 있는 경우 먼저 입력된 좌표를 기준입니다.");
 
+        sc.close();
     }
 }

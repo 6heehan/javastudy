@@ -298,5 +298,6 @@ public class Assignment3 {
         System.out.printf("Z: %3d개, %5.2f%%%n", countZ , (countZ / (double)countChar) * 100);
 
         System.out.println(speech.toLowerCase());
+        //모두 소문자로 바꾸면 case 경우가 반으로 줄어듬.
     }
 }

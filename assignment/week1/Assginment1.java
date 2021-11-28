@@ -16,18 +16,20 @@ public class Assginment1 {
         int nameInt2 = 0;
         int nameInt3 = 0;
 
+        //이름에 같은 글자가 있는 경우를 대비해 모두 if 문으로 조건 검색
         for( int i = statValue ; i <= endValue ; i++ ) {
             if(name1 == i) {
                 nameCount++;
                 nameInt1 = i;
-            } else if(name2 == i) {
+            }
+            if(name2 == i) {
                 nameCount++;
                 nameInt2 = i;
-            } else if(name3 == i) {
+            }
+            if(name3 == i) {
                 nameCount++;
                 nameInt3 = i;
             }
-
             if(nameCount == 3)
                     break;
         }
