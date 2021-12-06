@@ -1,3 +1,6 @@
+// 11-2_6heehan
+// 한 준 희
+
 package assignment.week3;
 
 import java.util.Scanner;
