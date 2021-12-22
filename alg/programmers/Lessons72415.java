@@ -12,7 +12,7 @@ public class Lessons72415 {
         int[][] board = {{1,0,0,3},{2,0,0,0},{0,0,0,2},{3,0,1,0}};
         int r = 1;
         int c = 0;
-        problem.solution(board, r, c);
+        problem.solution2(board, r, c);
 
     }
 
@@ -168,7 +168,7 @@ public class Lessons72415 {
     }
 
     public int solution2(int[][] board, int r, int c) {
-        int answer = Integer.MAX_VALUE;
+        int answer = 0;
         int enterCount = 0;
         int[][] move = {{1,0},{-1,0},{0,1},{0,-1}};
 
@@ -177,7 +177,7 @@ public class Lessons72415 {
                 if(board[i][j] != 0) enterCount += 1;
             }
         }
-
+        System.out.println(enterCount);
         Queue<Position72415> q = new LinkedList<>();
         Position72415 p = new Position72415(c, r, board[r][c], 0, board[r][c] == 0 ? 0 : 1);
         q.offer(p);
@@ -190,22 +190,51 @@ public class Lessons72415 {
             int currentC = currentP.count;
             int findCount = currentP.findCount;
 
-            if(findCount == enterCount && answer > currentC) {
-                answer = currentC;
-                continue;
+            if(findCount == enterCount) {
+                if(answer == 0 || answer > currentC)  {
+                    answer = currentC;
+                    continue;
+                }
             }
             //총 찾은 카드와 뒤집는 개수가 일치하는 경우 최소값 비교
 
             //네 방향으로 다 이동이 가능
             //컨트롤을 누르고 이동 시 해당 방향에서 가장 가까운 카드로 이동 , 만약 없다면 해당 방향의 끝으로 이동
-            //
+            
+            boolean[] moveDirection = new boolean[4];
             for(int i=0; i<move.length; i++) {
                 //move[i][0] y
                 //move[i][1] x
+                int dist = 0;
                 for(int j=1; j<4; j++) {
                     int nextX = currentX + move[i][1] * j;
                     int nextY = currentY + move[i][0] * j;
-                    int nextV = board[nextY][nextX];
+                    if(!isValid(nextX, nextY)) continue;
+                    dist = j;
+                    if(!moveDirection[i]) {
+                        
+                        int nextV = board[nextY][nextX];
+                        if(nextV != 0) {
+                            Position72415 nextP = null;
+                            moveDirection[i] = true;
+                            if(currentV == 0) {
+                              
+                                nextP = new Position72415(nextX, nextY, nextV, currentC+1, findCount+1);
+                                q.offer(nextP);
+                            } else if(currentV == nextV) {
+                              
+                                nextP = new Position72415(nextX, nextY, 0, currentC+1, findCount+1);
+                                q.offer(nextP);
+                            } 
+                        }
+                    }
+                }
+                if(!moveDirection[i]) {
+                    int nextX = currentX + move[i][1] * dist;
+                    int nextY = currentY + move[i][0] * dist;
+                    int nextV = currentV;
+                    Position72415 nextP = new Position72415(nextX, nextY, nextV, currentC+1, findCount);
+                    q.offer(nextP);
                 }
             }
 
