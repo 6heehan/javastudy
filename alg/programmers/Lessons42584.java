@@ -45,7 +45,9 @@ public class Lessons42584 {
             int currentP = q.poll();
             iter = q.iterator();
             while(iter.hasNext()) {
-                if(iter.next() >= currentP) count++;
+                //if(iter.next() >= currentP) count++;
+                count++;
+                if(iter.next() < currentP) break;
             }
             answer[index++] = count;
         }
