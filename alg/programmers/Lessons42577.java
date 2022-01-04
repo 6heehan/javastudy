@@ -14,11 +14,14 @@ public class Lessons42577 {
         String[] phone_book3 = {"12","123","1235","567","88"};
 
         
-        solution(phone_book1);
-        solution(phone_book2);
-        solution(phone_book3);
+        // solution(phone_book1);
+        // solution(phone_book2);
+        // solution(phone_book3);
 
         
+        solution1(phone_book1);
+        solution1(phone_book2);
+        solution1(phone_book3);
     }
 
     public static void solution(String[] phone_book) {
@@ -26,9 +29,11 @@ public class Lessons42577 {
         Map<Integer, String> map = new HashMap<>();
         int index = 0;
         Arrays.sort(phone_book);
+        /*
         for(String s: phone_book) {
             System.out.println(s);
         }
+        */
         for(String s: phone_book) {
             map.put(index, s);
             index++;
@@ -57,6 +62,20 @@ public class Lessons42577 {
         }
         */
 
+        System.out.println(answer);
+    }
+
+
+    public static void solution1(String[] phone_book) {
+        boolean answer = true;
+        int index = phone_book.length;
+        Arrays.sort(phone_book);
+        for(int i=0; i <index-1; i++) {
+            if(phone_book[i+1].startsWith(phone_book[i])) {
+                answer = false;
+                break;
+            }
+        }
         System.out.println(answer);
     }
 }
