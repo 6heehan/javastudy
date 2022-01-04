@@ -7,8 +7,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import javax.xml.crypto.Data;
-
 public class Lessons42586 {
     public static void main(String[] args) {
 
