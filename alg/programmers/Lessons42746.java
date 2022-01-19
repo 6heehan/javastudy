@@ -1,5 +1,7 @@
 package alg.programmers;
 
+import java.util.*;
+
 public class Lessons42746 {
     public static void main(String[] args) {
         System.out.println("가장 큰 수");
@@ -9,9 +11,10 @@ public class Lessons42746 {
 
         int[] numbers1 = {6, 10, 2};
         int[] numbers2 = {3, 30, 34, 5, 9};
-
-        problem.solution(numbers1);
-        problem.solution(numbers2);
+        int[] numbers3 = {0,0,0};
+        System.out.println(problem.solution(numbers1));
+        System.out.println(problem.solution(numbers2));
+        System.out.println(problem.solution(numbers3));
     }
 
     public String solution(int[] numbers) {
@@ -21,13 +24,12 @@ public class Lessons42746 {
         for(int i=0; i<len; i++) {
             changeNumbers[i] = String.valueOf(numbers[i]);
         }
-        String[] caseArray = new String[len*(len-1)];
-        int index = 0;
-        for(int i=0; i<len; i++) {
-            for(int j=i+1; j<len; j++) {
-                //caseArray[index] = 
-            }
+        Arrays.sort(changeNumbers, (o1, o2) -> (o2+o1).compareTo(o1+o2));
+        for(String s: changeNumbers) {
+            //System.out.println(s);
+            answer = answer + s;
         }
+        if(answer.startsWith("0")) answer = "0";
         return answer;
     }
 }
