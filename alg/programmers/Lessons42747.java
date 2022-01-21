@@ -17,9 +17,10 @@ public class Lessons42747 {
         int answer = 0;
         Arrays.sort(citations);
         int length = citations.length;
-        for(int i = length - 1 ; i > 0; i--) {
-            if(length - i >= citations[i]) {
-                answer = citations[i];
+        for(int i = length - 1 ; i >=0 ; i--) {
+            if(citations[i] > answer) {
+                answer++;
+            } else {
                 break;
             }
         }
