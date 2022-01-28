@@ -7,6 +7,7 @@ public class Lessons42883 {
         System.out.println("큰 수 만들기");
         System.out.println("https://programmers.co.kr/learn/courses/30/lessons/42883");
 
+        
         Lessons42883 problem = new Lessons42883();
 
         System.out.println(problem.solution("1924", 2));
