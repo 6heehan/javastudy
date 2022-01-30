@@ -7,7 +7,6 @@ public class Lessons43164 {
 
         Lessons43164 problem = new Lessons43164();
         //problem.solution(tickets);
-
     }
 
     public String[] solution(String[][] tickets) {
