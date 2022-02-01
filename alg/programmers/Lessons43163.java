@@ -2,6 +2,7 @@ package alg.programmers;
 
 public class Lessons43163 {
     boolean[] isVisited = {};
+    int count = 0;
     public static void main(String[] args) {
         System.out.println("단어변환");
         System.out.println("https://programmers.co.kr/learn/courses/30/lessons/43163");
@@ -15,9 +16,9 @@ public class Lessons43163 {
         // String[] words2 = {"hot","dot","dog","lot","log"};
 
         Lessons43163 problem = new Lessons43163();
-        problem.solution(begin1, target1, words1);
+        //problem.solution(begin1, target1, words1);
         //solution(begin2, target2, words2);
-
+        System.out.println(problem.solution2(begin1, target1, words1));
     }
 
     public  int solution(String begin, String target, String[] words) {
@@ -52,5 +53,38 @@ public class Lessons43163 {
         }
         if(count==2) return true;
         return false;
+    }
+
+    public int solution2(String begin, String target, String[] words) {
+        isVisited = new boolean[words.length];
+
+        dfs2(begin, target, words, 0);
+        return count;
+    }
+
+    public void dfs2(String begin, String target, String[] words, int cnt) {
+        if (begin.equals(target)) {
+            count = cnt;
+            return;
+        }
+
+        for(int i=0; i<words.length; i++) {
+            if(isVisited[i]) {
+                continue;
+            }
+
+            int k = 0;
+            for(int j = 0; j < begin.length(); j++) {
+                if(begin.charAt(j) == words[i].charAt(j)) {
+                    k++;
+                }
+            }
+
+            if(k == begin.length()-1) {
+                isVisited[i] = true;
+                dfs2(words[i], target, words, cnt+1);
+                isVisited[i] = false;
+            }
+        }
     }
 }
