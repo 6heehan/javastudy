@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Lessons43164 {
 
     String[] answer = {};
-
     public static void main(String[] args) {
         System.out.println("여행경로");
         System.out.println("https://programmers.co.kr/learn/courses/30/lessons/43164");
