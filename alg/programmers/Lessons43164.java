@@ -23,8 +23,9 @@ public class Lessons43164 {
         String start = "ICN";
 
         Arrays.sort(tickets, (o1, o2) -> (o2[1]).compareTo(o1[1]));
-        // 도착지 기준으로 오름차순 정렬
+        // 도착지 기준으로 내림차순 정렬
         // 가장 빠른 알파벳이 마지막에 찾아짐.
+        // 오름차순으로 정렬해서 처음 도착하는 경우의 수에서 return 할 수 없는가 ?
 
         int[] visitIndex = new int[tickets.length];
         for(int i=0; i<visitIndex.length; i++) {
