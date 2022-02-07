@@ -27,6 +27,7 @@ public class Lessons43164 {
         // 가장 빠른 알파벳이 마지막에 찾아짐.
         // 오름차순으로 정렬해서 처음 도착하는 경우의 수에서 return 할 수 없는가 ?
 
+        
         int[] visitIndex = new int[tickets.length];
         for(int i=0; i<visitIndex.length; i++) {
             visitIndex[i] = -1;
