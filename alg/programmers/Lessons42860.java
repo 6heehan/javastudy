@@ -10,6 +10,7 @@ public class Lessons42860 {
 
         System.out.println(problem.solution("JEROEN"));
         System.out.println(problem.solution("JAN"));
+        
     }
 
     public int solution(String name) {
