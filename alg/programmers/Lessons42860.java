@@ -7,7 +7,6 @@ public class Lessons42860 {
         System.out.println("https://programmers.co.kr/learn/courses/30/lessons/42860");
 
         Lessons42860 problem = new Lessons42860();
-
         
         System.out.println(problem.solution("JEROEN"));
         System.out.println(problem.solution("JAN"));  
