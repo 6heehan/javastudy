@@ -12,10 +12,14 @@ public class Problem1094 {
         int stick = 64;
         int remainStick = 0;
         int count = 0;
+        if(x == 64) {
+            remainStick = x;
+            count = 1;
+        }
         while(remainStick != x) {
-            count++;
-            stick = stick - stick / 2;
+            stick = stick / 2;
             if(stick + remainStick <= x) {
+                count++;
                 remainStick = remainStick + stick;
             }
         }
