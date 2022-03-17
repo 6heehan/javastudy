@@ -9,12 +9,13 @@ public class Problem1004 {
 
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
-        for(int i = 0; i < T; i++) {
-            int x1 = sc.nextInt();
-            int y1 = sc.nextInt();
-            int x2 = sc.nextInt();
-            int y2 = sc.nextInt();
+        int x1 = sc.nextInt();
+        int y1 = sc.nextInt();
+        int x2 = sc.nextInt();
+        int y2 = sc.nextInt();
 
+        for(int i = 0; i < T; i++) {
+            
             int n = sc.nextInt();
             for(int j = 0; j < n; j++) {
                 
