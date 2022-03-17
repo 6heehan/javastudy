@@ -19,6 +19,7 @@ public class Problem1004 {
             int n = sc.nextInt();
             for(int j = 0; j < n; j++) {
                 
+                
             }
         }
         sc.close();
