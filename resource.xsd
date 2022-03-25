@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tmax.co.kr/proobject/resource"
+    elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:rsc="http://www.tmax.co.kr/proobject/resource" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    jaxb:version="1.0">
+
+    <complexType name="modelingType">
+        <attribute name="uri" type="string"></attribute>
+    </complexType>
+
+    <complexType name="proObjectResource">
+        <sequence>
+            <element name="modeling" type="rsc:modelingType" maxOccurs="1"
+                minOccurs="0"></element>
+            <element name="property" type="string" maxOccurs="unbounded"
+                minOccurs="0" />
+        </sequence>
+        <attribute name="resourceId" type="string"></attribute>
+        <attribute name="logicalName" type="string"></attribute>
+        <attribute name="physicalName" type="string"></attribute>
+        <attribute name="resourceType" type="rsc:resourceBasicType"></attribute>
+        <attribute name="ApplicationName" type="string"></attribute>
+        <attribute name="serviceGroupName" type="string"></attribute>
+        <attribute name="resourcePackage" type="string"></attribute>
+        <attribute name="status" type="rsc:statusType"></attribute>
+        <attribute name="creator" type="string"></attribute>
+        <!-- <attribute name="createTime" type="rsc:Timestamp"></attribute> -->
+        <attribute name="owner" type="string"></attribute>
+        <!-- <attribute name="updateTime" type="rsc:Timestamp"></attribute> -->
+        <attribute name="buildTime" type="rsc:Timestamp"></attribute>
+        <attribute name="versionNo" type="string"></attribute>
+        <attribute name="revision" type="string"></attribute>
+        <attribute name="description" type="string"></attribute>
+        <attribute name="resourcePath" type="string"></attribute>
+        <attribute name="modifier" type="string"></attribute>
+        <attribute name="lockOwner" type="string"></attribute>
+        <attribute name="created" type="string"></attribute>
+        <attribute name="lastUpdated" type="string"></attribute>
+    </complexType>
+
+    <simpleType name="resourceBasicType">
+        <restriction base="string">
+            <enumeration value="APPLICATION" />
+            <enumeration value="SERVICE_GROUP" />
+            <enumeration value="DATA_OBJECT" />
+            <enumeration value="DATA_OBJECT_FACTORY" />
+            <enumeration value="QUERY"/>
+            <enumeration value="BIZ_OBJECT" />
+            <enumeration value="SERVICE_OBJECT" />
+            <enumeration value="JOB_OBJECT" />
+            <enumeration value="TASK_OBJECT" />
+            <enumeration value="DTO" />
+            <enumeration value="MESSAGE" />
+            <enumeration value="PROPERTY" />
+            <enumeration value="UI_OBJECT" />
+            <enumeration value="SERVICE_OBJECT_ASYNC" />
+            <enumeration value="SERVICE_OBJECT_AUTOMATIC" />
+            <enumeration value="DATA_TRANSFER_OBJECT" />
+            <enumeration value="TOP_WAR" />
+            <enumeration value="JAVA" />
+            <enumeration value="EVENT" />
+            <enumeration value="EVENT_SERVICE_OBJECT" />        
+            <enumeration value="ASPECTJ" />
+            <!-- 나중에 지울 것 -->
+            <enumeration value="STRUCTURE" />
+            <enumeration value="MAP" />
+            <enumeration value="DBIO_CONFIG" />
+            <enumeration value="OTHER" />
+            <enumeration value="DEPENDENCY" />
+            <enumeration value="MODULE" />
+            <enumeration value="TESTCASE" />
+            <enumeration value="TESTDATA" />
+            <enumeration value="MAPPING" />
+            <enumeration value="CONSTANT" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="statusType">
+        <restriction base="string">
+            <enumeration value="DEV" />
+            <enumeration value="TST" />
+            <enumeration value="TST" />
+            <enumeration value="REL" />
+            <enumeration value="Y" />
+            <enumeration value="N" />
+            <enumeration value="D" />
+            <enumeration value="E" />
+            <enumeration value="C" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Timestamp">
+        <annotation>
+            <appinfo>
+                <jaxb:javaType name="java.sql.Timestamp" printMethod="toString"
+                    parseMethod="valueOf" />
+            </appinfo>
+        </annotation>
+        <restriction base="long"></restriction>
+    </simpleType>
+</schema>
