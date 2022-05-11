@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Problem8958 {
     public static void main(String[] args) {
         // https://www.acmicpc.net/problem/8958
-        // 음계
+        // OX퀴즈
 
         Scanner sc = new Scanner(System.in);
         
