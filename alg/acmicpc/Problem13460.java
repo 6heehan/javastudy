@@ -31,6 +31,7 @@ public class Problem13460 {
         int hX = 0;
         int hY = 0;
 
+        int ans = 0;
         
         int[] dx = {-1,0,1,0};
         int[] dy = {0,1,0,-1};
@@ -50,7 +51,7 @@ public class Problem13460 {
                 if(map[i][j] == 'R') {
                     red = new Pair(j,i,0,0,0);
                 } else if (map[i][j] == 'B') {
-                    blue = new Pair(j,i,0,0,0);
+                    blue = new Pair(0,0,j,i,0);
                 } else if (map[i][j] == 'O') {
                     hX = j;
                     hY = i;
@@ -68,11 +69,10 @@ public class Problem13460 {
             int cCnt = cP.cnt;
 
             if(cCnt > 10) {
-                System.out.println("-1");
                 break;
             }
 
-            visited[rX][rY][bX][bY] = true;
+            visited[rY][rX][bY][bX] = true;
 
             for(int i=0; i<4; i++) {
                 int newRX = rX;
@@ -108,7 +108,7 @@ public class Problem13460 {
                 
                 if(isRedHole && !isBlueHole) {
                     System.out.println(cCnt);
-                    break;
+                    return;
                 }
 
                 if(newRX == newBX && newRY == newBY) {
@@ -127,13 +127,16 @@ public class Problem13460 {
                     }
                 }
 
-                if(!visited[newRX][newRY][newBX][newBY]) {
-                    visited[newRX][newRY][newBX][newBY] = true;
+                if(!visited[newRY][newRX][newBY][newBX]) {
+                    visited[newRY][newRX][newBY][newBX] = true;
                     q.add(new Pair(newRX, newRY, newBX, newBY, cCnt+1));
                 }
             }
 
                
+        }
+        if(ans == 0) {
+            System.out.println("-1");
         }
         sc.close();
     }
