@@ -108,6 +108,7 @@ public class Problem13460 {
                 
                 if(isRedHole && !isBlueHole) {
                     System.out.println(cCnt);
+                    sc.close();
                     return;
                 }
 
