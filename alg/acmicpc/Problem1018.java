@@ -43,7 +43,7 @@ public class Problem1018 {
                 y++;
             }
         }
-        System.out.println("answer : ");
+        // System.out.println("answer : ");
         System.out.println(ans);
     }
     
@@ -51,27 +51,38 @@ public class Problem1018 {
         int c_x = x;
         int c_y = y;
         int cnt = 0;
+        char[][] temp = new char[c.length][c[0].length];
+
+        for(int i = 0; i < c.length; i++) {
+            // System.arraycopy(c[i], 0, temp, 0, c[i].length);
+            temp[i] = c[i].clone();
+        }
+
         while(true) {
-            char temp1 = c[c_y][c_x];
+            char temp1 = temp[c_y][c_x];
             c_x++;
             if(c_x == x+8) {
-                c_x = 0;
+                c_x = x;
+                temp1 = temp[c_y][c_x];
                 c_y++;
+                if(c_y == y+8)
+                    break;    
             }
-            if(c_y == y+8)
-                break;
-            char temp2 = c[c_y][c_x];
+
+            char temp2 = temp[c_y][c_x];
             
             if(temp1 == temp2) {
-                System.out.println("cnt : " + cnt + " temp1 : " + temp1 + " temp2 : " + temp2);
+                // System.out.println("cnt : " + cnt + " temp1 : " + temp1 + " temp2 : " + temp2);
                 cnt++;
                 if(temp1 == 'B')
-                    c[c_y][c_x] = 'W';
+                    temp[c_y][c_x] = 'W';
                 else 
-                    c[c_y][c_x] = 'B';
+                    temp[c_y][c_x] = 'B';
             }
         }
-        System.out.println("cnt : " + cnt);
+        // System.out.println("y : " + y + " x : " + x);
+        // System.out.println("cnt : " + cnt);
+        cnt = Math.min(cnt, 64-cnt);
         ans = Math.min(cnt, ans);
     }
 }
