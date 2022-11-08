@@ -26,8 +26,27 @@ public class Problem1654 {
         
         int cnt = N;
         int ans = sum / N;
-        while(cnt >= N) {
-            
+        int tempSum = 0;
+        for(int i =0; i < K; i++) {
+            tempSum += line[i] / ans;
         }
+
+        if(tempSum < N) {
+            while(tempSum != N) {
+                ans--;
+                for(int i =0; i < K; i++) {
+                    tempSum += line[i] / ans;
+                }       
+            }
+        } else {
+            while(tempSum > N) {
+                ans++;
+                for(int i =0; i < K; i++) {
+                    tempSum += line[i] / ans;
+                }
+            }
+        }
+
+        System.out.println(ans);
     }
 }
