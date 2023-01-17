@@ -26,7 +26,7 @@ public class Problem1966 {
 
             int[] pCount = new int[10];
 
-            Queue q = new LinkedList<Data>();
+            Queue<Data> q = new LinkedList<Data>();
             for(int i = 0; i<n; i++) {
                 p[i] = Integer.parseInt(st.nextToken());
                 pCount[p[i]]++;
@@ -35,7 +35,7 @@ public class Problem1966 {
 
             int ans = 0;
             while(true) {
-                Data temp = (Data) q.poll();
+                Data temp = q.poll();
                 
                 boolean flag = false;
                 for(int i=9;i>temp.p;i--) {
