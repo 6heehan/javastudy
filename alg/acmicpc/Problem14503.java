@@ -18,7 +18,6 @@ public class Problem14503 {
         int d = sc.nextInt();
 
         
-
         sc.close();
     }
 }
