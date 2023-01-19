@@ -30,6 +30,9 @@ public class Problem4949 {
                         break;
                     } else if (s.peek() == 1) {
                         s.pop();
+                    } else {
+                        flag = true;
+                        break;
                     }
                 } else if (temp == ']') {
                     if (s.empty()) {
@@ -37,6 +40,9 @@ public class Problem4949 {
                         break;
                     } else if (s.peek() == 2) {
                         s.pop();
+                    } else {
+                        flag = true;
+                        break;
                     }
                 }
             }
