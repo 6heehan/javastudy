@@ -1,7 +1,6 @@
 package alg.acmicpc;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
@@ -14,10 +13,10 @@ public class Problem1874 {
         StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(br.readLine());
 
-        Stack s = new Stack<Integer>();
+        Stack<Integer> s = new Stack<Integer>();
         int[] arr = new int[n];
         int[] num = new int[n];
-        for(int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(br.readLine());
             num[i] = i;
         }
@@ -25,16 +24,16 @@ public class Problem1874 {
         int index = 0;
         int index_num = 1;
 
-        while(index_num <= n) {
-            
-            if(index_num == arr[index]) {
+        while (index_num <= n) {
+
+            if (index_num == arr[index]) {
                 sb.append("+\n").append("-\n");
                 index_num++;
                 index++;
 
                 int temp_size = s.size();
-                for(int i = temp_size - 1; i >= 0 ; i--) {
-                    if((int)s.get(i) == arr[index]) {
+                for (int i = temp_size - 1; i >= 0; i--) {
+                    if ((int) s.get(i) == arr[index]) {
                         sb.append("-\n");
                         s.pop();
                         index++;
@@ -50,7 +49,7 @@ public class Problem1874 {
             }
         }
 
-        if(s.size() != 0)
+        if (s.size() != 0)
             System.out.println("NO");
         else
             System.out.println(sb);
