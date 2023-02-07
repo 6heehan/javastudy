@@ -12,32 +12,25 @@ public class Problem5525 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int m = Integer.parseInt(br.readLine());
-        String str = br.readLine();
 
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < n; i++) {
-            sb.append("IO");
-        }
-
-        sb.append("I");
-
-        String s = sb.toString();
+        char[] c = br.readLine().toCharArray();
 
         int cnt = 0;
-        while (true) {
-            int index = str.indexOf(s);
-            if (index == -1) {
-                break;
-            }
-            cnt++;
-            if (m - index >= 2 * n + 1) {
-                str = str.substring(index + 2);
+        int res = 0;
+
+        for (int i = 1; i < m - 1; i++) {
+            if (c[i - 1] == 'I' && c[i] == 'O' && c[i + 1] == 'I') {
+                cnt++;
+                if (cnt == n) {
+                    cnt--;
+                    res++;
+                }
+                i++;
             } else {
-                break;
+                cnt = 0;
             }
         }
 
-        System.out.println(cnt);
+        System.out.println(res);
     }
 }
