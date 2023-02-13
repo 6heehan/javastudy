@@ -26,6 +26,7 @@ public class Problem7576 {
         n = Integer.parseInt(st.nextToken());
 
         tomato = new int[n][m];
+        int zeroCnt = 0;
 
         Queue<Tomato> q = new LinkedList<>();
 
@@ -35,12 +36,14 @@ public class Problem7576 {
                 tomato[i][j] = Integer.parseInt(st.nextToken());
                 if (tomato[i][j] == 1) {
                     q.offer(new Tomato(i, j, day));
+                } else if (tomato[i][j] == 0) {
+                    zeroCnt++;
                 }
             }
         }
 
         while (!q.isEmpty()) {
-            if (checkTomato())
+            if (zeroCnt == 0)
                 break;
 
             Tomato t = q.poll();
@@ -56,12 +59,13 @@ public class Problem7576 {
                     q.offer(new Tomato(nextY, nextX, cd + 1));
                     tomato[nextY][nextX] = 1;
                     day = cd + 1;
+                    zeroCnt--;
                 }
             }
 
         }
 
-        if (checkTomato()) {
+        if (zeroCnt == 0) {
             System.out.println(day);
         } else {
             System.out.println("-1");
