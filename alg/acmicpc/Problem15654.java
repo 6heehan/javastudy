@@ -13,6 +13,7 @@ public class Problem15654 {
     static int n, m;
     static int[] arr;
     static int[] num;
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,15 +28,19 @@ public class Problem15654 {
             num[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(num);
+
         dfs(0);
+        System.out.println(sb);
     }
 
     static void dfs(int depth) {
         if (depth == m) {
             for (int val : arr) {
-                System.out.print(val + " ");
+                // System.out.print(val + " ");
+                sb.append(val).append(" ");
             }
-            System.out.println();
+            // System.out.println();
+            sb.append("\n");
             return;
         }
 
